@@ -1,25 +1,23 @@
-var acc = {
+var ac = {
 	watchID: null,
-	onSuccess: function (acceleration) {
-		$('#acelerometro .scroll h2').html('Acceleration X: ' + acceleration.x + '<br>' +
-			  'Acceleration Y: ' + acceleration.y + '<br>' +
-			  'Acceleration Z: ' + acceleration.z + '<br>' +
-			  'Timestamp: '      + acceleration.timestamp + '<br>');
-	},
-	onError: function () {
-		alert('onError!');
-	},
-	start: function(){
-		if(acc.watchID == null){
-			var options = { frequency: 500 };  // Update every 3 seconds
-			acc.watchID = navigator.accelerometer.watchAcceleration(acc.onSuccess, acc.onError, options);
-		}
+	options: {frequency:500},
+	init: function(){
+		if(!ac.watchID)
+			ac.watchID = navigator.accelerometer.watchAcceleration(ac.success, ac.error, ac.options);
 	},
 	stop: function(){
-		if(acc.watchID != null){
-			navigator.accelerometer.clearWatch(acc.watchID);
-			acc.watchID = null;
-			$('#acelerometro .scroll h2').html("Detenido")
+		if(ac.watchID != null){
+			navigator.accelerometer.clearWatch(ac.watchID);
+			ac.watchID = null;
+			$('#acelerometro .scroll h2').html('Detenido');
 		}
+	},
+	success: function(a){
+		$('#acelerometro .scroll h2').html('X: ' + a.x + '<br>' +
+										   'Y: ' + a.y + '<br>' +
+										   'Z: ' + a.z);
+	},
+	error: function(err){
+		alert(err.code);
 	}
 };

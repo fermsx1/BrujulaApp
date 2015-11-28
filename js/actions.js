@@ -5,23 +5,24 @@ var jQT = new $.jQTouch({
 
 var fn = {
     ready: function(){
-        document.addEventListener("deviceready",fn.init,false);
+        document.addEventListener("deviceReady",fn.init,false);
     },
     init: function(){
-        $('#acelerometro .individual li').tap(fn.acc);
-        $('#brujula .individual li').click(fn.brj);
+        $('#acelerometro .individual li').tap(fn.acTap);
+        $('#brujula .individual li').tap(fn.brTap);
     },
-    acc: function(){
+    acTap: function(){
         if($(this).index() == 0)
-            acc.start();
+            ac.init();
         else
-            acc.stop();
+            ac.stop();
     },
-    brj: function(){
+    brTap: function(){
         if($(this).index() == 0)
-            brj.start();
+            br.init();
         else
-            brj.stop();
+            br.stop();
     }
 };
+
 $(fn.ready);
