@@ -4,7 +4,7 @@ var ac = {
 	init: function(){
 		alert("init acelerometro");
 		if(!ac.watchID)
-			ac.watchID = navigator.accelerometer.watchAcceleration(ac.success, ac.error, ac.options);
+			ac.watchID = navigator.accelerometer.watchAcceleration(ac.success, ac.err, ac.options);
 	},
 	stop: function(){
 		if(ac.watchID != null){
@@ -19,7 +19,7 @@ var ac = {
 										   'Y: ' + a.y + '<br>' +
 										   'Z: ' + a.z);
 	},
-	error: function(err){
+	err: function(err){
 		alert(err.code);
 	}
 };
