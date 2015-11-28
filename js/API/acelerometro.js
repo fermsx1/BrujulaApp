@@ -3,8 +3,12 @@ var ac = {
 	options: {frequency:500},
 	init: function(){
 		alert("init acelerometro");
-		if(!ac.watchID)
-			ac.watchID = navigator.accelerometer.watchAcceleration(ac.success, ac.err, ac.options);
+		if(!ac.watchID){
+            ac.watchID = navigator.accelerometer.watchAcceleration(ac.success, ac.err, ac.options);
+        }else{
+            alert("watchID " + watchID);
+        }
+			
 	},
 	stop: function(){
 		if(ac.watchID != null){
