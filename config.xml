@@ -2,7 +2,7 @@
     <widget xmlns = "http://www.w3.org/ns/widgets"
 
         xmlns:gap   = "http://phonegap.com/ns/1.0"
-        id          = "mx.cenet.geoApp"
+        id          = "mx.cenet.acelerometroBrujula"
         version     = "1.0.0"
         versionCode = "1" >
 
@@ -10,18 +10,17 @@
 
         <preference name="phonegap-version" value="3.7.0" />
 
-        <name>BrujAcel</name>
+        <name>BrujulaAPP</name>
 
         <description>
-        	Aplicación de prueba de la brújula y el acelerómetro 
+            Aplicación de prueba para el acelerómetro y la brújula. 
         </description>
 
         <author href="http://igitsoft.com" email="info@igitsoft.com">
-        	Carlos Celma
+            FErnando
         </author>
-
-		<!-- Plugins -->
-		<gap:plugin name="org.apache.cordova.device-motion" />
-		<gap:plugin name="org.apache.cordova.device-orientation" />
         
+        
+        <gap:plugin name="org.apache.cordova.device-motion" />
+        <gap:plugin name="org.apache.cordova.device-orientation" />
     </widget>
