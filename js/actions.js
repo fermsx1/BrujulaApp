@@ -1,8 +1,7 @@
 //actions
 var jQT = new $.jQTouch({
-	themeSelectionSelector: '#jqt'
+    themeSelectionSelector: '#jqt'
 });
-
 
 var fn = {
     ready: function(){
